@@ -21,8 +21,15 @@ static int hashFunction(int key, int size)
 // @return Pointer to the newly created hash table
 HashTable* createHashTable(int size)
 {
+    if(size <= 0) { return NULL; }
+
     HashTable* ht = (HashTable*)malloc(sizeof(HashTable));
+
+    if(ht == NULL) { return NULL; }
+
     ht->node_list = (HashNode**)malloc(sizeof(HashNode*) * size);
+
+    if(ht->node_list == NULL) { free(ht); return NULL; }
 
     ht->size = size;
     ht->count = 0;
@@ -67,7 +74,12 @@ void deleteHashTable(HashTable *table)
 // @param value The value to insert
 void hashTableInsert(HashTable *table, int key, int value)
 {
+    if(table == NULL) { return; }
+
     HashNode* newNode = (HashNode*)malloc(sizeof(HashNode));
+
+    if(newNode == NULL) { return; }
+
     newNode->key = key;
     newNode->value = value;
     newNode->next = NULL;
@@ -96,6 +108,8 @@ void hashTableInsert(HashTable *table, int key, int value)
 // @param key The key of the pair to remove
 void hashTableRemove(HashTable *table, int key)
 {
+    if(table == NULL) { return; }
+
     int index;
     HashNode* node;
 
@@ -136,6 +150,8 @@ void hashTableRemove(HashTable *table, int key)
 // @return The value associated with the key, or NULL if the key is not found
 HashNode* hashTableGet(HashTable *table, int key)
 {
+    if(table == NULL) { return NULL; }
+
     int index;
     HashNode* node;
 
