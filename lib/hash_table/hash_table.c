@@ -148,7 +148,7 @@ void hashTableRemove(HashTable *table, int key)
 // @param table The hash table
 // @param key The key of the value to retrieve
 // @return The value associated with the key, or NULL if the key is not found
-HashNode* hashTableGet(HashTable *table, int key)
+HashNode* hashTableFind(HashTable *table, int key)
 {
     if(table == NULL) { return NULL; }
 
