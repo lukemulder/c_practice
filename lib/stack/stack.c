@@ -13,6 +13,8 @@ Stack* createStack()
 
 void deleteStack(Stack *s)
 {
+  if(s == NULL) { return; }
+
   StackNode* curr_node;
   StackNode* next_node;
 
@@ -64,7 +66,7 @@ int stackPop(Stack *s)
 
 int stackPeak(Stack *s)
 {
-  if(s == NULL) { return INT32_MAX; }
+  if(s == NULL || s->head == NULL) { return INT32_MAX; }
 
   return s->head->value;
 }
@@ -72,6 +74,6 @@ int stackPeak(Stack *s)
 int stackSize(Stack *s)
 {
   if(s == NULL) { return 0; }
-  
+
   return s->size;
 }

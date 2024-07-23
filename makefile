@@ -3,7 +3,7 @@ CC=gcc
 CFLAGS=-I./lib/hash_table -I./lib/stack -I./lib/queue -I./assert -Wall -g
 
 # Output binary
-BIN=hash_table_tests
+BIN=data_structure_tests
 
 # Source directories
 HASH_DIR=lib/hash_table
