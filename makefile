@@ -11,6 +11,7 @@ HASH_TEST_DIR=lib/hash_table/test
 STACK_DIR=lib/stack
 STACK_TEST_DIR=lib/stack/test
 QUEUE_DIR=lib/queue
+QUEUE_TEST_DIR=lib/queue/test
 ASSERT_DIR=assert
 
 # Source files
@@ -19,6 +20,7 @@ SRC_FILES=$(HASH_DIR)/hash_table.c \
 					$(STACK_DIR)/stack.c \
 					$(STACK_TEST_DIR)/stack_tests.c \
 					$(QUEUE_DIR)/queue.c \
+					$(QUEUE_TEST_DIR)/queue_tests.c \
           $(ASSERT_DIR)/asserts.c \
           main.c
 

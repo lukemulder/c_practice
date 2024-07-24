@@ -41,4 +41,4 @@ int stackPeak(Stack *s);
 // @return The size of the stack
 int stackSize(Stack *s);
 
-#endif // HASH_TABLE_H
+#endif // STACK_H

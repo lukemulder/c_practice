@@ -52,6 +52,27 @@ static void StackTest_PushPeakPop()
   ASSERT_TRUE(stackPeak(s) == INT32_MAX);
 }
 
+static void StackTest_PushOrder()
+{
+  int v1 = 4;
+  int v2 = 34;
+
+  s = createStack();
+
+  ASSERT_TRUE(s != NULL);
+
+  stackPush(s, v1);
+  stackPush(s, v2);
+
+  ASSERT_TRUE(stackPeak(s) == v2);
+
+  ASSERT_TRUE(stackPop(s) == v2);
+
+  ASSERT_TRUE(stackPeak(s) == v1);
+
+  ASSERT_TRUE(stackPop(s) == v1);
+}
+
 /* SUITE */
 
 void StackTestSuite_Run()
@@ -59,4 +80,5 @@ void StackTestSuite_Run()
   StackTest_Run(StackTest_CreateDelete);
   StackTest_Run(StackTest_PushNULL);
   StackTest_Run(StackTest_PushPeakPop);
+  StackTest_Run(StackTest_PushOrder);
 }
